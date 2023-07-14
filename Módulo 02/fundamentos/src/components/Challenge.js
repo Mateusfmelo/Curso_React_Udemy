@@ -1,7 +1,7 @@
 const Challenge = () => {
-  
-    const a = 10;
-    const b = 15;
+
+    const a = 10
+    const b = 15
   
     return (
       <div>
@@ -9,7 +9,7 @@ const Challenge = () => {
         <p>B: {b}</p>
         <button onClick={() => console.log(a + b)}>Somar!</button>
       </div>
-    );
-  };
+    )
+  }
 
 export default Challenge
