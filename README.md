@@ -5,4 +5,6 @@
 - Tópicos abordados até o momento:
 	- Componentes
 	- Eventos
-	- Templates Expressions
+	- Expressões de Modelos
+	- Renderização Condicional
+	- Operador Ternário
