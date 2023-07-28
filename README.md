@@ -8,3 +8,4 @@
 	- Expressões de Modelos
 	- Renderização Condicional
 	- Operador Ternário
+	- Props
