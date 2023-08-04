@@ -6,6 +6,11 @@ import ListRender from './components/ListRender'
 import ManageData from './components/ManageData'
 import ShowUserName from './components/ShowUserName'
 import CarDetails from './components/CarDetails'
+import Fragment from './components/Fragment'
+import Container from './components/Container'
+import ExecuteFunction from './components/ExecuteFunction'
+import Message from './components/Message'
+import ChangeMessageState from './components/ChangeMessageState'
 
 function App() {
 
@@ -18,10 +23,20 @@ function App() {
 		{id:3, brand: 'Renault', color: 'Azul', newCar: false, km: 234}
 	]
 
+	function showMessage() {
+		console.log('Evento do componente pai!')
+	}
+
+	const [message, setMessage] = useState('')
+
+	const handleMessage = (msg) => {
+		setMessage(msg)
+	}
+
 	return (
 		<>
 			<div>
-				<h3>Avançando em React!</h3>
+				<h1>Avançando em React!</h1>
 			</div>
 			{/* Imagem de public*/}
 			<div>
@@ -47,10 +62,29 @@ function App() {
 			<CarDetails brand='Ford' color='Vermelho' km={0} newCar={true}/>
 			<CarDetails brand='Fiat' color='Branco' km={4500} newCar={false}/>
 
-			{/* loop em array de objetos*/}
+			{/* loop em array de objetos */}
 			{cars.map((car) => (
-				<CarDetails brand={car.brand} color={car.color} km={car.km} newCar={car.newCar}/>
+				<CarDetails key={car.id} brand={car.brand} color={car.color} km={car.km} newCar={car.newCar}/>
 			))}
+
+			{/* fragment*/ }
+			<Fragment propFragment='teste'/>
+
+			{/* children */ }
+			<Container myValue={'testing'}>
+				<p>E este é o conteúdo</p>
+			</Container>
+
+			<Container myValue={'testing 2'}>
+				<h5>Testando o container</h5>
+			</Container>
+
+			{/* executar função*/ }
+			<ExecuteFunction myFunction={showMessage}/>
+
+			{/* state lift */ }
+			<Message msg={message}/>
+			<ChangeMessageState handleMessage={handleMessage}/>
 		</>
 	)
 }

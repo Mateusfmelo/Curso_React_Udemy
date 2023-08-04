@@ -9,3 +9,5 @@
 	- Renderização Condicional
 	- Operador Ternário
 	- Props
+	- Fragment
+	- State Lift
